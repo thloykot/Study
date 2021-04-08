@@ -8,7 +8,6 @@ public class Main {
         System.out.println(NumberUtils.LONG_ZERO);
         System.out.println(NumberUtils.INTEGER_ZERO);
         int[] i  = {4,6,36,31,5423,765};
-        System.out.println("hello");
         System.out.println(NumberUtils.max(i));
 
     }
