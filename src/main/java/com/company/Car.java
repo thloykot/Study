@@ -1,11 +1,12 @@
 package com.company;
 
-
 public abstract class Car {
-    String model,engine;
-    double price;
-
-    public abstract void engine(String model_name,String othet_char);
-
+    private String model;
+    public Car(String engine,String model,int price){
+        this.model = model;
+    };
+    public String getModel(){
+      return model;
+    };
 
 }
