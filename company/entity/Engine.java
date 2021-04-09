@@ -2,6 +2,7 @@ package com.company.entity;
 
 
 public interface Engine {
-    String info(String Mark);
+    Engine makeEngine(String model);
+    String getParam(String param);
 
 }

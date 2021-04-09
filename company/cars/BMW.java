@@ -1,10 +1,14 @@
 package com.company.cars;
 
-
 import com.company.entity.Car;
+import com.company.entity.Engine;
 
 public class BMW extends Car {
-    public BMW(String engine, String model, int price) {
+    private String model;
+    private int price;
+    private Engine engine;
+
+    public BMW(Engine engine, String model, int price) {
         super(engine, model, price);
     }
 
