@@ -1,8 +1,8 @@
 package com.company.factory;
 
-import com.company.car.BMW;
-import com.company.car.Mercedes;
-import com.company.car.Volkswagen;
+import com.company.cars.BMW;
+import com.company.cars.Mercedes;
+import com.company.cars.Volkswagen;
 import com.company.entity.Car;
 import com.company.entity.Engine;
 

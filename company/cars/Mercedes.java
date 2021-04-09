@@ -1,4 +1,4 @@
-package com.company.car;
+package com.company.cars;
 
 import com.company.entity.Car;
 
