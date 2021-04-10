@@ -1,8 +1,6 @@
 package com.company;
 
 
-import com.company.cars.BMW;
-import com.company.entity.BMWEngine;
 import com.company.entity.Car;
 import com.company.factory.Diller;
 import com.company.sorting.BabbleSort;
@@ -19,9 +17,11 @@ public class Main {
         System.out.println(NumberUtils.max(i));*/
         BabbleSort babbleSort = new BabbleSort();
         ArrayList<Car> cars = new ArrayList<>();
-        cars.add(new Diller().diller("BMW","X-5","Black",1000));
-        cars.add((new Diller().diller("Mercedes","Uno","Blue",10000)));
-        cars.add(new Diller().diller("Volkswagen","pop","red",100));
+        cars.add(new Diller().diller("BMW", "X-5", "Black", 1000));
+        cars.add((new Diller().diller("Mercedes", "Uno", "Blue", 10000)));
+        cars.add(new Diller().diller("Volkswagen", "pop", "red", 100));
+        ArrayList<Car> lis = new BabbleSort().sort(cars);
+        System.out.println(lis);
 
     }
 }

@@ -1,6 +1,6 @@
 package com.company.entity;
 
-public class MercedesEngine implements Engine{
+public class MercedesEngine implements Engine {
 
     @Override
     public Engine makeEngine(String model) {
