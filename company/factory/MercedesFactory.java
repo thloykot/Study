@@ -2,10 +2,9 @@ package com.company.factory;
 
 
 import com.company.cars.Mercedes;
-import com.company.entity.Car;
+import com.company.cars.Car;
 import com.company.entity.CarFactory;
-import com.company.entity.Engine;
-import com.company.entity.MercedesEngine;
+import com.company.engine.MercedesEngine;
 
 public class MercedesFactory implements CarFactory {
     @Override

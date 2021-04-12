@@ -1,8 +1,8 @@
 package com.company.factory;
 
 import com.company.cars.BMW;
-import com.company.entity.BMWEngine;
-import com.company.entity.Car;
+import com.company.engine.BMWEngine;
+import com.company.cars.Car;
 import com.company.entity.CarFactory;
 
 public class BMWFactory implements CarFactory {

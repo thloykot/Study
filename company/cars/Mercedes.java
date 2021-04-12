@@ -1,6 +1,5 @@
 package com.company.cars;
 
-import com.company.entity.Car;
 import com.company.entity.Engine;
 
 public class Mercedes extends Car {
@@ -8,7 +7,7 @@ public class Mercedes extends Car {
         super(model, price, engine);
     }
 
-    public void fuel() {
-        System.out.println("Mercedes cars have oil, diesel and electric fuel system");
+    public void sits() {
+        System.out.println("Mercedes cars has 2 or 4 sits in their cars and 22 in their basses");
     }
 }

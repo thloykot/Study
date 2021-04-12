@@ -1,9 +1,9 @@
 package com.company.factory;
 
 import com.company.cars.Volkswagen;
-import com.company.entity.Car;
+import com.company.cars.Car;
 import com.company.entity.CarFactory;
-import com.company.entity.VolkswagenEngine;
+import com.company.engine.VolkswagenEngine;
 
 public class VolkswagenFactory implements CarFactory {
     @Override

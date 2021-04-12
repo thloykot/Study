@@ -1,7 +1,6 @@
 package com.company.cars;
 
 
-import com.company.entity.Car;
 import com.company.entity.Engine;
 
 public class BMW extends Car {
