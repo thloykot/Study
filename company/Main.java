@@ -1,7 +1,7 @@
 package com.company;
 
 
-import com.company.cars.Car;
+import com.company.car.Car;
 import com.company.factory.Diller;
 import com.company.sorting.BabbleSort;
 

@@ -1,8 +1,8 @@
 package com.company.factory;
 
 
-import com.company.cars.Mercedes;
-import com.company.cars.Car;
+import com.company.car.Mercedes;
+import com.company.car.Car;
 import com.company.entity.CarFactory;
 import com.company.engines.MercedesEngine;
 

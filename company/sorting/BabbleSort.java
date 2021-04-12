@@ -1,6 +1,6 @@
 package com.company.sorting;
 
-import com.company.cars.Car;
+import com.company.car.Car;
 
 import java.util.ArrayList;
 

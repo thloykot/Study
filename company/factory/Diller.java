@@ -1,6 +1,6 @@
 package com.company.factory;
 
-import com.company.cars.Car;
+import com.company.car.Car;
 
 public class Diller {
     public Car diller(String mark, String model, String color, int price) {
