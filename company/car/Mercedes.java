@@ -10,12 +10,8 @@ public class Mercedes extends Car {
         return sits;
     }
 
-    public void setSits(int sits) {
-        this.sits = sits;
-    }
-
-
-    public Mercedes(String model, int price, Engine engine) {
+    public Mercedes(String model, int price, Engine engine, int sits) {
         super(model, price, engine);
+        this.sits = sits;
     }
 }

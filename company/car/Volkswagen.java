@@ -10,13 +10,9 @@ public class Volkswagen extends Car {
         return carType;
     }
 
-    public void setCarType(String carType) {
-        this.carType = carType;
-    }
-
-
-    public Volkswagen(String model, int price, Engine engine) {
+    public Volkswagen(String model, int price, Engine engine, String carType) {
         super(model, price, engine);
+        this.carType = carType;
     }
 
 
