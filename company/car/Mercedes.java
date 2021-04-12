@@ -2,7 +2,7 @@ package com.company.car;
 
 import com.company.entity.Engine;
 
-public class Mercedes extends Car {
+public final class Mercedes extends Car {
 
     private int sits;
 

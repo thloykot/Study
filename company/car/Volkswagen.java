@@ -2,9 +2,9 @@ package com.company.car;
 
 import com.company.entity.Engine;
 
-public class Volkswagen extends Car {
+public final  class Volkswagen extends Car {
     
-    private String carType;
+    private  String carType;
 
     public String getCarType() {
         return carType;
