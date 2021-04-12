@@ -26,4 +26,8 @@ public class Car {
         return engine;
     }
 
+    public void print(){
+        System.out.println("Це машина");
+    }
+
 }

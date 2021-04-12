@@ -1,12 +1,10 @@
-package com.company.engines;
+package com.company.engine;
 
 import com.company.entity.Engine;
 
 public class BMWEngine implements Engine {
     @Override
-    public Engine makeEngine(String model) {
-        return null;
+    public void showInfo() {
+        System.out.println("Це двигун від BMW");
     }
-
-
 }

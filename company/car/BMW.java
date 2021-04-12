@@ -4,16 +4,15 @@ import com.company.entity.Engine;
 
 public final class BMW extends Car {
 
-    private final String fuel;
 
-    public BMW(String model, int price, Engine engine,String fuel) {
+    public BMW(String model, int price, Engine engine) {
         super(model, price, engine);
-        this.fuel = fuel;
+    }
+    @Override
+    public void print(){
+        System.out.println("Це BMW");
     }
 
-    public String getFuel() {
-        return fuel;
-    }
 
 }
 

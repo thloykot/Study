@@ -4,14 +4,14 @@ import com.company.entity.Engine;
 
 public final class Mercedes extends Car {
 
-    private final int sits;
 
-    public Mercedes(String model, int price, Engine engine, int sits) {
+
+    public Mercedes(String model, int price, Engine engine) {
         super(model, price, engine);
-        this.sits = sits;
+    }
+    @Override
+    public void print(){
+        System.out.println("Це Mercedes");
     }
 
-    public int getSits() {
-        return sits;
-    }
 }
