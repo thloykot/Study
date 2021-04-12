@@ -5,22 +5,22 @@ import com.company.entity.Car;
 import java.util.ArrayList;
 
 public class BabbleSort {
-    public ArrayList<Car> sort(ArrayList<Car> Car) {
+    public ArrayList<Car> sort(ArrayList<Car> car) {
         boolean isSorted = false;
         Car buf;
         while (!isSorted) {
             isSorted = true;
-            for ( int i = 0; i < Car.size() - 1; i++ ) {
-                if (Car.get(i).getModel().compareTo(Car.get(i+1).getModel())>0) {
+            for ( int i = 0; i < car.size() - 1; i++ ) {
+                if (car.get(i).getModel().compareTo(car.get(i + 1).getModel()) > 0) {
                     isSorted = false;
 
-                    buf = Car.get(i);
-                    Car.set(i,Car.get(i+1));
-                    Car.set(i+1,buf);
+                    buf = car.get(i);
+                    car.set(i, car.get(i + 1));
+                    car.set(i + 1, buf);
 
                 }
             }
         }
-        return Car;
+        return car;
     }
 }
