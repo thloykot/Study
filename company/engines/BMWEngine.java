@@ -1,4 +1,4 @@
-package com.company.engine;
+package com.company.engines;
 
 import com.company.entity.Engine;
 

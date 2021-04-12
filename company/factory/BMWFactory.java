@@ -1,7 +1,7 @@
 package com.company.factory;
 
 import com.company.cars.BMW;
-import com.company.engine.BMWEngine;
+import com.company.engines.BMWEngine;
 import com.company.cars.Car;
 import com.company.entity.CarFactory;
 

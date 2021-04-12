@@ -4,7 +4,7 @@ package com.company.factory;
 import com.company.cars.Mercedes;
 import com.company.cars.Car;
 import com.company.entity.CarFactory;
-import com.company.engine.MercedesEngine;
+import com.company.engines.MercedesEngine;
 
 public class MercedesFactory implements CarFactory {
     @Override
