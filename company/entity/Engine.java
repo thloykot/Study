@@ -3,6 +3,7 @@ package com.company.entity;
 
 public abstract class Engine {
 
-    public void showInfo() {
-    }
+    protected String capasity;
+
+    public abstract void showInfo();
 }

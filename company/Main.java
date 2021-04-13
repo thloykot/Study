@@ -22,7 +22,7 @@ public class Main {
         cars.add((new Diller().diller("Mercedes", "CDR", "Blue", 10000)));
         cars.add(new Diller().diller("Volkswagen", "LANCE", "red", 100));
         ArrayList<Car> lis = new BabbleSort().sort(cars);
-        Engine engine = lis.get(1).getEngine();
+        Engine engine = lis.get(0).getEngine();
         engine.showInfo();
         System.out.println(lis);
 
