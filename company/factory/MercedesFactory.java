@@ -8,10 +8,11 @@ import com.company.engine.MercedesEngine;
 
 import java.util.Scanner;
 
-public class MercedesFactory implements CarFactory {
+public class MercedesFactory extends CarFactory {
+
     @Override
     public Car createCar(String model, String color, int price) {
-        return new Mercedes(model, price,engineFactory.engine(model));
+        return new Mercedes(model, price, engineFactory.engine(model));
     }
 
 }

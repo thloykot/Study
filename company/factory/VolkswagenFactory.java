@@ -7,9 +7,10 @@ import com.company.engine.VolkswagenEngine;
 
 import java.util.Scanner;
 
-public class VolkswagenFactory implements CarFactory {
+public class VolkswagenFactory extends CarFactory {
+
     @Override
     public Car createCar(String model, String color, int price) {
-        return new Volkswagen(model, price,engineFactory.engine(model));
+        return new Volkswagen(model, price, engineFactory.engine(model));
     }
 }

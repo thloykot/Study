@@ -1,15 +1,14 @@
 package com.company.factory;
 
 import com.company.car.BMW;
-import com.company.engine.BMWEngine;
 import com.company.car.Car;
 import com.company.entity.CarFactory;
 
-import java.util.Scanner;
 
-public class BMWFactory implements CarFactory {
+public class BMWFactory extends CarFactory {
+
     @Override
     public Car createCar(String model, String color, int price) {
-        return new BMW(model, price,engineFactory.engine(model));
+        return new BMW(model, price, engineFactory.engine(model));
     }
 }
