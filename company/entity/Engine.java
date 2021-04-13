@@ -3,15 +3,17 @@ package com.company.entity;
 
 public abstract class Engine {
 
-    private int capasity;
+    public int capasity;
+    public String model;
 
-    public void showCapasity(){
-        System.out.println(capasity);
-    }
-
-    public void setCapasity(int capasity){
+    public Engine(String model,int capasity){
+        this.model = model;
         this.capasity = capasity;
     }
 
-    public abstract void showInfo();
+    public void showInfo(){
+        System.out.println("Модель:" + model + "\nОб'єм:" + capasity);
+    }
+
+    public abstract void showMark();
 }

@@ -7,22 +7,12 @@ import com.company.entity.Engine;
 import com.company.car.Mark;
 
 public class EngineFactory {
-    private static EngineFactory engineFactory;
 
-    private EngineFactory(){};
-
-    public static synchronized EngineFactory getEngineFactory() {
-        if (engineFactory == null) {
-            engineFactory = new EngineFactory();
-        }
-        return engineFactory;
-    }
-
-    public static Engine makeEngine(Mark mark) {
+    public Engine makeEngine(Mark mark,String model) {
         return switch (mark) {
-            case BMW -> new BMWEngine();
-            case Mercedes -> new MercedesEngine();
-            case Volkswagen -> new VolkswagenEngine();
+            case BMW -> new BMWEngine(model,20);
+            case MERCEDES -> new MercedesEngine(model,20);
+            case VOLKSWAGEN -> new VolkswagenEngine(model,20);
         };
     }
 }
