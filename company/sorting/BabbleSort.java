@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class BabbleSort {
 
-    public ArrayList<Car> sort(ArrayList<Car> car) {
+    public ArrayList<Car> babbleSort(ArrayList<Car> car) {
         boolean isSorted = false;
         Car buf;
         while (!isSorted) {

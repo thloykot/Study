@@ -9,8 +9,8 @@ public class BMWEngine extends Engine {
     }
 
     @Override
-    public void showMark() {
-        System.out.println("Це двигун від BMW, об'єм:");
+    public void showInfo() {
+        System.out.println("Це двигун від BMW "+ "моделі:" + model +", об'єм:" + capacity);
 
     }
 }

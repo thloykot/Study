@@ -4,11 +4,12 @@ import com.company.car.Mark;
 import com.company.car.Volkswagen;
 import com.company.car.Car;
 import com.company.entity.CarFactory;
-import com.company.entity.Singletone;
+import com.company.entity.FactoryMake;
 
 
 public class VolkswagenFactory implements CarFactory {
-    private final EngineFactory engineFactory = Singletone.getEngineFactory();
+    private final FactoryMake factoryMake = FactoryMake.getSingltone();
+    private final EngineFactory engineFactory = factoryMake.getEngineFactory();
 
     @Override
     public Car createCar(String model, String color, int price) {

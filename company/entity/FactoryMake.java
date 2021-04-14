@@ -5,16 +5,24 @@ import com.company.factory.EngineFactory;
 import com.company.factory.MercedesFactory;
 import com.company.factory.VolkswagenFactory;
 
-public class Singletone extends EngineFactory {
-    private static EngineFactory engineFactory;
-    private static BMWFactory bmwFactory;
-    private static VolkswagenFactory volkswagenFactory;
-    private static MercedesFactory mercedesFactory;
+public class FactoryMake extends EngineFactory {
+    private static FactoryMake factoryMake;
+    private EngineFactory engineFactory;
+    private BMWFactory bmwFactory;
+    private VolkswagenFactory volkswagenFactory;
+    private MercedesFactory mercedesFactory;
 
-    private Singletone() {
+    private FactoryMake() {
     }
 
-    public static VolkswagenFactory getVolkswagenFactory() {
+    public static FactoryMake getSingltone() {
+        if (factoryMake == null) {
+            return new FactoryMake();
+        }
+        return factoryMake;
+    }
+
+    public VolkswagenFactory getVolkswagenFactory() {
         if (volkswagenFactory == null) {
             return new VolkswagenFactory();
         }
@@ -22,7 +30,7 @@ public class Singletone extends EngineFactory {
     }
 
 
-    public static MercedesFactory getMercedesFactory() {
+    public MercedesFactory getMercedesFactory() {
         if (mercedesFactory == null) {
             mercedesFactory = new MercedesFactory();
         }
@@ -30,14 +38,14 @@ public class Singletone extends EngineFactory {
     }
 
 
-    public static EngineFactory getEngineFactory() {
+    public EngineFactory getEngineFactory() {
         if (engineFactory == null) {
             engineFactory = new EngineFactory();
         }
         return engineFactory;
     }
 
-    public static BMWFactory getBmwFactory() {
+    public BMWFactory getBmwFactory() {
         if (bmwFactory == null) {
             bmwFactory = new BMWFactory();
         }
