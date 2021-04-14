@@ -9,7 +9,7 @@ public final class BMW extends Car {
     }
 
     @Override
-    public void print() {
+    public void printInfo() {
         System.out.println("Це BMW");
     }
 

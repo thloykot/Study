@@ -9,9 +9,8 @@ public final class Volkswagen extends Car {
     }
 
     @Override
-    public void print() {
-        System.out.println("Це Volkswagen");
+    public void printInfo() {
+        System.out.println("Це Mercedes");
     }
-
 
 }

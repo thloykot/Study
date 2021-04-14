@@ -15,6 +15,9 @@ public class Singletone extends EngineFactory {
     }
 
     public static VolkswagenFactory getVolkswagenFactory() {
+        if (volkswagenFactory == null) {
+            return new VolkswagenFactory();
+        }
         return volkswagenFactory;
     }
 

@@ -27,6 +27,6 @@ public abstract class Car {
         return engine;
     }
 
-    public abstract void print();
+    public abstract void printInfo();
 
 }
