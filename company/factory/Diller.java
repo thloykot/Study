@@ -10,11 +10,11 @@ public class Diller {
     private final MercedesFactory mercedesFactory = SingeltonProvider.getMercedesFactory();
     private final VolkswagenFactory volkswagenFactory = SingeltonProvider.getVolkswagenFactory();
 
-    public Car getCar(Mark mark, String model, String color, int price) {
+    public Car getCar(Mark mark, String model, String color, int price, int sits) {
         return switch (mark) {
-            case BMW -> bmwFactory.createCar(model, color, price);
-            case MERCEDES -> mercedesFactory.createCar(model, color, price);
-            case VOLKSWAGEN -> volkswagenFactory.createCar(model, color, price);
+            case BMW -> bmwFactory.createCar(model, color, price, sits);
+            case MERCEDES -> mercedesFactory.createCar(model, color, price, sits);
+            case VOLKSWAGEN -> volkswagenFactory.createCar(model, color, price, sits);
         };
     }
 }

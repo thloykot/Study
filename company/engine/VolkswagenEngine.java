@@ -8,6 +8,6 @@ public class VolkswagenEngine extends Engine {
 
     @Override
     public void showInfo() {
-        System.out.println("Це двигун від Volkswagen " + "моделі:" + ", об'єм:" + capacity);
+        System.out.println("Це двигун від Volkswagen, об'єм:" + capacity);
     }
 }

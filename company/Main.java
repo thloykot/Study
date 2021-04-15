@@ -20,9 +20,9 @@ public class Main {
         int[] i  = {4,6,36,31,5423,765};
         System.out.println(NumberUtils.max(i));*/
         ArrayList<Car> cars = new ArrayList<>();
-        cars.add(new Diller().getCar(Mark.BMW, "X_5", "Black", 1000));
-        cars.add((new Diller().getCar(Mark.MERCEDES, "CDR", "Blue", 10000)));
-        cars.add(new Diller().getCar(Mark.VOLKSWAGEN, "LANCE", "red", 100));
+        cars.add(new Diller().getCar(Mark.BMW, "X_5", "Black", 1000,20));
+        cars.add((new Diller().getCar(Mark.MERCEDES, "CDR", "Blue", 10000,6)));
+        cars.add(new Diller().getCar(Mark.VOLKSWAGEN, "LANCE", "red", 100,5));
         ArrayList<Car> lis = new BabbleSort().babbleSort(cars);
         Engine engine = lis.get(0).getEngine();
         engine.showInfo();

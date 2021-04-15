@@ -8,11 +8,11 @@ import com.company.car.Mark;
 
 public class EngineFactory {
 
-    public Engine makeEngine(Mark mark,String model) {
+    public Engine makeEngine(Mark mark, int capasity) {
         return switch (mark) {
-            case BMW -> new BMWEngine(20);
-            case MERCEDES -> new MercedesEngine(20);
-            case VOLKSWAGEN -> new VolkswagenEngine(20);
+            case BMW -> new BMWEngine(capasity);
+            case MERCEDES -> new MercedesEngine(capasity);
+            case VOLKSWAGEN -> new VolkswagenEngine(capasity);
         };
     }
 }

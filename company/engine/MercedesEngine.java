@@ -8,7 +8,7 @@ public class MercedesEngine extends Engine {
 
     @Override
     public void showInfo() {
-        System.out.println("Це двигун від Mercedes "+ "моделі:" + ", об'єм:" + capacity);
+        System.out.println("Це двигун від Mercedes, об'єм:" + capacity);
     }
 }
 
