@@ -13,7 +13,7 @@ public class SingeltonProvider {
 
     private SingeltonProvider() {
     }
-    
+
     public static VolkswagenFactory getVolkswagenFactory() {
         return volkswagenFactory;
     }

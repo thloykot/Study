@@ -1,7 +1,7 @@
 package com.company.engine;
 
 
-public class Engine {
+public abstract class Engine {
 
     protected final int capacity;
     protected final String model;
@@ -11,8 +11,6 @@ public class Engine {
         this.capacity = capasity;
     }
 
-    public void showInfo() {
-        System.out.println("Модель:" + model + "\nОб'єм:" + capacity);
-    }
+    public abstract void showInfo();
 
 }
