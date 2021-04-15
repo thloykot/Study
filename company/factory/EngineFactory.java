@@ -10,9 +10,9 @@ public class EngineFactory {
 
     public Engine makeEngine(Mark mark,String model) {
         return switch (mark) {
-            case BMW -> new BMWEngine(model,20);
-            case MERCEDES -> new MercedesEngine(model,20);
-            case VOLKSWAGEN -> new VolkswagenEngine(model,20);
+            case BMW -> new BMWEngine(20);
+            case MERCEDES -> new MercedesEngine(20);
+            case VOLKSWAGEN -> new VolkswagenEngine(20);
         };
     }
 }

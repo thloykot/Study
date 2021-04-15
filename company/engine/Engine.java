@@ -4,10 +4,8 @@ package com.company.engine;
 public abstract class Engine {
 
     protected final int capacity;
-    protected final String model;
 
-    public Engine(String model, int capasity) {
-        this.model = model;
+    public Engine(int capasity) {
         this.capacity = capasity;
     }
 
