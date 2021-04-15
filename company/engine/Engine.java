@@ -1,10 +1,10 @@
-package com.company.entity;
+package com.company.engine;
 
 
-public abstract class Engine {
+public class Engine {
 
-    protected int capacity;
-    protected String model;
+    protected final int capacity;
+    protected final String model;
 
     public Engine(String model, int capasity) {
         this.model = model;

@@ -1,7 +1,5 @@
 package com.company.engine;
 
-import com.company.entity.Engine;
-
 public class BMWEngine extends Engine {
     
     public BMWEngine(String model, int capasity) {

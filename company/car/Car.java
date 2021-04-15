@@ -1,7 +1,7 @@
 package com.company.car;
 
 
-import com.company.entity.Engine;
+import com.company.engine.Engine;
 
 public abstract class Car {
 

@@ -2,14 +2,13 @@ package com.company.factory;
 
 import com.company.car.Car;
 import com.company.car.Mark;
-import com.company.entity.FactoryMake;
+import com.company.entity.SingeltonProvider;
 
 
 public class Diller {
-    private final FactoryMake factoryMake = FactoryMake.getSingltone();
-    private final BMWFactory bmwFactory = factoryMake.getBmwFactory();
-    private final MercedesFactory mercedesFactory = factoryMake.getMercedesFactory();
-    private final VolkswagenFactory volkswagenFactory = factoryMake.getVolkswagenFactory();
+    private final BMWFactory bmwFactory = SingeltonProvider.getBmwFactory();
+    private final MercedesFactory mercedesFactory = SingeltonProvider.getMercedesFactory();
+    private final VolkswagenFactory volkswagenFactory = SingeltonProvider.getVolkswagenFactory();
 
     public Car getCar(Mark mark, String model, String color, int price) {
         return switch (mark) {

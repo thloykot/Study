@@ -3,7 +3,7 @@ package com.company.factory;
 import com.company.engine.BMWEngine;
 import com.company.engine.MercedesEngine;
 import com.company.engine.VolkswagenEngine;
-import com.company.entity.Engine;
+import com.company.engine.Engine;
 import com.company.car.Mark;
 
 public class EngineFactory {
