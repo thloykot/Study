@@ -4,10 +4,8 @@ package com.company;
 import com.company.car.Car;
 import com.company.car.Mark;
 import com.company.engine.Engine;
-import com.company.entity.SingeltonProvider;
 import com.company.factory.Diller;
-import com.company.factory.EngineFactory;
-import com.company.sorting.BabbleSort;
+import com.company.sorting.Sorting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,7 @@ public class Main {
         cars.add(new Diller().getCar(Mark.BMW, "X_5", "Black", 1000,20));
         cars.add((new Diller().getCar(Mark.MERCEDES, "CDR", "Blue", 10000,6)));
         cars.add(new Diller().getCar(Mark.VOLKSWAGEN, "LANCE", "red", 100,5));
-        ArrayList<Car> lis = new BabbleSort().babbleSort(cars);
+        List<Car> lis = new Sorting().Sort(cars);
         Engine engine = lis.get(0).getEngine();
         engine.showInfo();
         System.out.println(lis);
