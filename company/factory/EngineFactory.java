@@ -9,28 +9,20 @@ import com.company.car.Mark;
 import java.util.EnumMap;
 
 public class EngineFactory {
-    private static final EnumMap<Mark, Engine> enumMap = new EnumMap<>(Mark.class);
+    private final MercedesEngine mercedesEngine = new MercedesEngine();
+    private final BMWEngine bmwEngine = new BMWEngine();
+    private final VolkswagenEngine volkswagenEngine = new VolkswagenEngine();
+    private final EnumMap<Mark, Engine> enumMap = new EnumMap<>(Mark.class) {{
+        put(Mark.BMW, bmwEngine);
+        put(Mark.MERCEDES, mercedesEngine);
+        put(Mark.VOLKSWAGEN, volkswagenEngine);
+    }};
 
 
-    private EnumMap<Mark, Engine> makeMap(int capasity) {
-        final MercedesEngine mercedesEngine = new MercedesEngine(capasity);
-        final BMWEngine bmwEngine = new BMWEngine(capasity);
-        final VolkswagenEngine volkswagenEngine = new VolkswagenEngine(capasity);
-
-        enumMap.put(Mark.BMW, bmwEngine);
-        enumMap.put(Mark.MERCEDES, mercedesEngine);
-        enumMap.put(Mark.VOLKSWAGEN, volkswagenEngine);
-        return enumMap;
-    }
 
     public Engine makeEngine(Mark mark, int capasity) {
-        try {
-            return makeMap(capasity).get(mark);
-        }
-        catch (NullPointerException e){
-            e.printStackTrace();
-        }
-        return makeMap(capasity).get(mark);
-    }
+        enumMap.get(mark).setCapacity(capasity);
+        return enumMap.get(mark);
+}
 }
 

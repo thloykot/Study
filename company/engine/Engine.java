@@ -3,9 +3,9 @@ package com.company.engine;
 
 public abstract class Engine {
 
-    protected final int capacity;
+    protected int capacity;
 
-    public Engine(int capasity) {
+    public void setCapacity(int capasity) {
         this.capacity = capasity;
     }
 
