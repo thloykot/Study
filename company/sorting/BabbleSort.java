@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public class BabbleSort {
 
     public ArrayList<Car> babbleSort(ArrayList<Car> car) {
-        ArrayList<Car> cars = car.stream().sorted((o1, o2) -> o1.getModel().toUpperCase()
+
+        return car.stream().sorted((o1, o2) -> o1.getModel().toUpperCase()
                 .compareTo(o2.getModel().toUpperCase())).collect(Collectors.toCollection(ArrayList::new));
-        return cars;
     }
 }
