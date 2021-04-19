@@ -7,16 +7,15 @@ import com.company.entity.SingeltonProvider;
 import java.util.EnumMap;
 import java.util.Map;
 
+import static java.util.Map.entry;
+
 
 public class Diller {
     private static final BMWFactory bmwFactory = SingeltonProvider.getBmwFactory();
     private static final MercedesFactory mercedesFactory = SingeltonProvider.getMercedesFactory();
     private static final VolkswagenFactory volkswagenFactory = SingeltonProvider.getVolkswagenFactory();
-    private static final EnumMap<Mark, CarFactory> enumMap = new EnumMap<>(Mark.class) {{
-        put(Mark.BMW, bmwFactory);
-        put(Mark.MERCEDES, mercedesFactory);
-        put(Mark.VOLKSWAGEN, volkswagenFactory);
-    }};
+    private static final Map<Mark, CarFactory> enumMap = Map.ofEntries(entry(Mark.BMW, bmwFactory),
+            entry(Mark.MERCEDES, mercedesFactory),entry(Mark.VOLKSWAGEN, volkswagenFactory));
 
 
     public Car getCar(Mark mark, String model, String color, int price, int sits) {
