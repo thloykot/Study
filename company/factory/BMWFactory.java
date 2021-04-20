@@ -11,6 +11,6 @@ public class BMWFactory implements CarFactory {
 
     @Override
     public Car createCar(String model, String color, int price, int sits) {
-        return new BMW(model, price, engineFactory.makeEngine(Mark.BMW, sits));
+        return new BMW(model, price, engineFactory.makeEngine(Mark.BMW));
     }
 }

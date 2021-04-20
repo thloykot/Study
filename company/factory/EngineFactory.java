@@ -11,17 +11,12 @@ import java.util.EnumMap;
 import java.util.Map;
 
 public class EngineFactory {
-    private final MercedesEngine mercedesEngine = new MercedesEngine();
-    private final BMWEngine bmwEngine = new BMWEngine();
-    private final VolkswagenEngine volkswagenEngine = new VolkswagenEngine();
-    private final Map<Mark, Engine> enumMap = Map.ofEntries(entry(Mark.BMW,bmwEngine),
-            entry(Mark.MERCEDES,mercedesEngine),entry(Mark.VOLKSWAGEN,volkswagenEngine));
+    private static final Map<Mark, Engine> enumMap = Map.of(Mark.BMW,new BMWEngine(),
+            Mark.MERCEDES,new MercedesEngine(),Mark.VOLKSWAGEN,new VolkswagenEngine());
 
 
-
-    public Engine makeEngine(Mark mark, int capasity) {
-        enumMap.get(mark).setCapacity(capasity);
-        return enumMap.get(mark);
+    public Engine makeEngine(Mark mark) {
+        return enumMap.getOrDefault(mark,new BMWEngine());
 }
 }
 

@@ -1,5 +1,5 @@
 package com.company.car;
 
 public enum Mark {
-    BMW, VOLKSWAGEN, MERCEDES
+    BMW, VOLKSWAGEN, MERCEDES,MITSUBISI
 }
