@@ -31,6 +31,4 @@ public abstract class Car {
         return model + ", " + price + ", " + engine;
     }
 
-    public abstract void printInfo();
-
 }

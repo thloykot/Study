@@ -12,11 +12,11 @@ import java.util.Optional;
 public class EngineFactory {
     private static final int CAPASITY = 20;
 
-    private static final Map<Mark, Engine> enumMap = Map.of(Mark.BMW, new BMWEngine(CAPASITY),
+    private static final Map<Mark, Engine> engineMap = Map.of(Mark.BMW, new BMWEngine(CAPASITY),
             Mark.MERCEDES, new MercedesEngine(CAPASITY), Mark.VOLKSWAGEN, new VolkswagenEngine(CAPASITY));
 
     public Optional<Engine> makeEngine(Mark mark) {
-        return Optional.ofNullable(enumMap.get(mark));
+        return Optional.ofNullable(engineMap.get(mark));
     }
 
 }
