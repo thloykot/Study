@@ -4,23 +4,22 @@ import com.company.car.Car;
 import com.company.car.Mark;
 import com.company.entity.SingeltonProvider;
 
-import java.util.EnumMap;
 import java.util.Map;
+import java.util.Optional;
 
 
 public class Diller {
-    private static final BMWFactory bmwFactory = SingeltonProvider.getBmwFactory();
-    private static final MercedesFactory mercedesFactory = SingeltonProvider.getMercedesFactory();
-    private static final VolkswagenFactory volkswagenFactory = SingeltonProvider.getVolkswagenFactory();
-    private static final EnumMap<Mark, CarFactory> enumMap = new EnumMap<>(Mark.class) {{
-        put(Mark.BMW, bmwFactory);
-        put(Mark.MERCEDES, mercedesFactory);
-        put(Mark.VOLKSWAGEN, volkswagenFactory);
-    }};
+    private static final Map<Mark, CarFactory> enumMap = Map.of(
+            Mark.BMW, SingeltonProvider.getBmwFactory(),
+            Mark.MERCEDES, SingeltonProvider.getMercedesFactory(),
+            Mark.VOLKSWAGEN, SingeltonProvider.getVolkswagenFactory());
 
+    public Optional<Car> getCar(Mark mark, String model, String color, int price, int sits) {
+        if (enumMap.containsKey(mark)) {
+            return enumMap.get(mark).createCar(model, color, price, sits);
+        }
+        return Optional.empty();
 
-    public Car getCar(Mark mark, String model, String color, int price, int sits) {
-        return enumMap.get(mark)
-                .createCar(model, color, price, sits);
     }
+
 }

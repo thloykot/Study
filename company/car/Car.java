@@ -4,7 +4,6 @@ package com.company.car;
 import com.company.engine.Engine;
 
 public abstract class Car {
-
     private final String model;
     private final int price;
     private final Engine engine;
@@ -25,6 +24,11 @@ public abstract class Car {
 
     public Engine getEngine() {
         return engine;
+    }
+
+    @Override
+    public String toString() {
+        return model + ", " + price + ", " + engine;
     }
 
     public abstract void printInfo();

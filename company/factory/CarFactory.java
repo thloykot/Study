@@ -2,9 +2,10 @@ package com.company.factory;
 
 
 import com.company.car.Car;
+import java.util.Optional;
 
 public interface CarFactory {
 
-    Car createCar(String model, String color, int price, int sits);
+    Optional<Car> createCar(String model, String color, int price, int sits);
 
 }

@@ -3,12 +3,10 @@ package com.company.engine;
 
 public abstract class Engine {
 
-    protected int capacity;
+    protected final int capasity;
 
-    public void setCapacity(int capasity) {
-        this.capacity = capasity;
+    public Engine(int capasity) {
+        this.capasity = capasity;
     }
-
-    public abstract void showInfo();
 
 }
