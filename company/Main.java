@@ -3,11 +3,10 @@ package com.company;
 
 import com.company.car.Car;
 import com.company.car.Mark;
-import com.company.engine.Engine;
-import com.company.entity.OutputBuilder;
+import com.company.builder.OutputBuilder;
 import com.company.entity.SingeltonProvider;
-import com.company.factory.Diller;
-import com.company.sorting.Sorting;
+import com.company.diller.Diller;
+import com.company.sorting.CarSorter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Sorting sorting = SingeltonProvider.getSorting();
-        OutputBuilder builder = SingeltonProvider.getBuilder();
+        CarSorter sorting = SingeltonProvider.getSorting();
+        OutputBuilder outputBuilder = SingeltonProvider.getBuilder();
         Diller diller = SingeltonProvider.getDiller();
 
         ArrayList<Car> carArrayList = new ArrayList<>();
@@ -26,6 +25,6 @@ public class Main {
         diller.getCar(Mark.MERCEDES, "aaf", "hgh", 2323, 43)
                 .ifPresent(carArrayList::add);
         List<Car> carList = sorting.sort(carArrayList);
-        builder.showAllInfo(carList);
+        outputBuilder.showAllInfo(carList);
     }
 }

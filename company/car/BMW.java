@@ -8,10 +8,4 @@ public final class BMW extends Car {
         super(model, price, engine);
     }
 
-    @Override
-    public void printInfo() {
-        System.out.println("Це BMW");
-    }
-
-
 }

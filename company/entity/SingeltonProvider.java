@@ -1,7 +1,9 @@
 package com.company.entity;
 
+import com.company.builder.OutputBuilder;
+import com.company.diller.Diller;
 import com.company.factory.*;
-import com.company.sorting.Sorting;
+import com.company.sorting.CarSorter;
 
 public class SingeltonProvider {
     private static final EngineFactory engineFactory = new EngineFactory();
@@ -9,7 +11,7 @@ public class SingeltonProvider {
     private static final VolkswagenFactory volkswagenFactory = new VolkswagenFactory();
     private static final MercedesFactory mercedesFactory = new MercedesFactory();
     private static final Diller diller = new Diller();
-    private static final Sorting sorting = new Sorting();
+    private static final CarSorter sorting = new CarSorter();
     private static final OutputBuilder builder = new OutputBuilder();
 
     private SingeltonProvider() {
@@ -35,7 +37,7 @@ public class SingeltonProvider {
         return diller;
     }
 
-    public static Sorting getSorting(){return sorting;}
+    public static CarSorter getSorting(){return sorting;}
 
     public static OutputBuilder getBuilder(){return builder;}
 

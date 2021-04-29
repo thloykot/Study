@@ -8,9 +8,4 @@ public final class Volkswagen extends Car {
         super(model, price, engine);
     }
 
-    @Override
-    public void printInfo() {
-        System.out.println("Це Mercedes");
-    }
-
 }
