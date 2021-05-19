@@ -8,7 +8,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c49b3eb-f318-4d27-a6e1-903b6fedf58e" name="Default Changelist" comment="" />
+    <list default="true" id="2c49b3eb-f318-4d27-a6e1-903b6fedf58e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spilna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spilna.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +86,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/38068/Desktop/1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -120,6 +135,7 @@
       <workItem from="1621419796831" duration="6010000" />
       <workItem from="1621425881204" duration="3024000" />
       <workItem from="1621432566283" duration="41000" />
+      <workItem from="1621432888216" duration="1383000" />
     </task>
     <servers />
   </component>
@@ -137,24 +153,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1621432533882">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621432533882" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1621432533880">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621432533880" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1621432533879">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621432533879" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1621432533880">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621432533880" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
