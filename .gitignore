@@ -1,3 +1,5 @@
 *.iml
 *class
-*.xml
+.xml
+target
+.gradle
