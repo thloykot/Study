@@ -9,9 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c49b3eb-f318-4d27-a6e1-903b6fedf58e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_liquibase_liquibase_core_4_3_5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spilna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spilna.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,7 @@
       <workItem from="1621419796831" duration="6010000" />
       <workItem from="1621425881204" duration="3024000" />
       <workItem from="1621432566283" duration="41000" />
-      <workItem from="1621432888216" duration="1383000" />
+      <workItem from="1621432888216" duration="1604000" />
     </task>
     <servers />
   </component>
