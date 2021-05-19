@@ -71,7 +71,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
-  <component name="RunManager" selected="Gradle.C:/Users/38068/Desktop/1">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="Spilna" />
@@ -103,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.C:/Users/38068/Desktop/1" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.C:/Users/38068/Desktop/1" />
       </list>
     </recent_temporary>
   </component>
