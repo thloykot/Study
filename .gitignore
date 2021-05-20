@@ -2,5 +2,6 @@
 *class
 .xml
 target
+.idea
 .gradle
-*.idea
+
