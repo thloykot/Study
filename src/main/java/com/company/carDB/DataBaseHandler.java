@@ -1,7 +1,7 @@
 package com.company.carDB;
 
-import org.jooq.DSLContext;
-import org.jooq.impl.DSL;
+import org.jooq.*;
+import org.jooq.impl.*;
 
 
 public class DataBaseHandler {

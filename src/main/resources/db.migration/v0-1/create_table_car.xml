@@ -5,14 +5,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <preConditions onFail="WARN">
-        <not>
-            <tableExists tableName="Car"/>
-        </not>
+    <preConditions>
+        <tableExists tableName="car"/>
     </preConditions>
-    
+
     <changeSet id="1" author="Thlkt">
-        <createTable tableName="Car">
+        <createTable tableName="car">
             <column name="ID" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -25,7 +23,7 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="colour" type="varchar(50)">
+            <column name="color" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
