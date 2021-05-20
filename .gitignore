@@ -3,4 +3,4 @@
 .xml
 target
 .gradle
-.idea
+*.idea
