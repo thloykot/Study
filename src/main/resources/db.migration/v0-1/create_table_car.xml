@@ -5,11 +5,14 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <preConditions>
-        <tableExists tableName="car"/>
-    </preConditions>
-
     <changeSet id="1" author="Thlkt">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="car"/>
+            </not>
+        </preConditions>
+
         <createTable tableName="car">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
