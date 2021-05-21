@@ -1,7 +1,7 @@
 package com.company.carDB;
 
-import org.jooq.*;
-import org.jooq.impl.*;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
 
 
 public class DataBaseHandler {
@@ -14,8 +14,6 @@ public class DataBaseHandler {
     public DSLContext getDbDSLContext() {
         if (PASS != null) {
             return DSL.using(CONNECTION_STR, USER, PASS);
-
-
         }
         throw new RuntimeException("Пароль відсутній");
     }

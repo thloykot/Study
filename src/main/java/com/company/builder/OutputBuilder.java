@@ -6,10 +6,8 @@ import java.util.List;
 
 public class OutputBuilder {
 
-    public void showAllInfo(List<Car> carArrayList) {
-        for ( Car i : carArrayList ) {
-            System.out.println(i);
-        }
+    public static void showAllInfo(List<Car> carArrayList) {
+        carArrayList.forEach(System.out::println);
     }
 
 }

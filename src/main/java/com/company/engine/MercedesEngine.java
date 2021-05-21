@@ -1,5 +1,7 @@
 package com.company.engine;
 
+import com.company.car.Mark;
+
 public class MercedesEngine extends Engine {
 
     public MercedesEngine(int capasity) {
@@ -7,8 +9,8 @@ public class MercedesEngine extends Engine {
     }
 
     @Override
-    public String toString() {
-        return "Це двигун від Mersedes, об'єм:" + capasity;
+    public Mark getMark() {
+        return Mark.MERCEDES;
     }
 
 }

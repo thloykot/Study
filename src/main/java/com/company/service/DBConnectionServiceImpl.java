@@ -17,4 +17,5 @@ public class DBConnectionServiceImpl implements DBConnectionService {
         return dbConnectionDao.isConnected();
     }
 
+
 }

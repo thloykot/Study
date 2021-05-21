@@ -1,38 +1,40 @@
 package com.company;
 
-import com.company.car.Car;
-import com.company.car.Mark;
 import com.company.builder.OutputBuilder;
-import com.company.entity.SingletonProvider;
+import com.company.car.BMW;
+import com.company.car.Car;
+import com.company.car.Mercedes;
+import com.company.car.Volkswagen;
 import com.company.diller.Diller;
-import com.company.service.DBConnectionService;
-import com.company.sorting.CarSorter;
+import com.company.engine.BMWEngine;
+import com.company.engine.MercedesEngine;
+import com.company.engine.VolkswagenEngine;
+import com.company.entity.SingletonProvider;
+import com.company.service.CarServise;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
+    private static final Diller diller = SingletonProvider.getDiller();
+    private static final CarServise carServise = SingletonProvider.getCarServise();
 
     public static void main(String[] args) {
 
-        CarSorter sorting = SingletonProvider.getCarSorter();
-        OutputBuilder outputBuilder = SingletonProvider.getOutputBuilder();
-        Diller diller = SingletonProvider.getDiller();
-        DBConnectionService connectionService = SingletonProvider.getConnectionService();
+        if (SingletonProvider.getConnectionService().isConnected()) {
+            Car car1 = new Mercedes("Moooopz", 49000000, "black", new MercedesEngine(54));
+            Car car2 = new Volkswagen("Jt", 60000, "green", new VolkswagenEngine(60));
+            Car car3 = new BMW("X5", 4200400, "black", new BMWEngine(55));
 
 
-        ArrayList<Car> carArrayList = new ArrayList<>();
+            int car1Id = carServise.save(car1);
+            int car2Id = carServise.save(car2);
 
-        diller.getCar(Mark.BMW, "dda", "fgf", 23, 43)
-                .ifPresent(carArrayList::add);
-        diller.getCar(Mark.MERCEDES, "aaf", "hgh", 2323, 43)
-                .ifPresent(carArrayList::add);
-        diller.getCar(Mark.VOLKSWAGEN, "ad", "gh", 23223, 655)
-                .ifPresent(carArrayList::add);
+            carServise.delete(car1Id);
+            carServise.update(car1, car2Id);
+            carServise.save(car3);
 
-        List<Car> carList = sorting.sort(carArrayList);
-        outputBuilder.showAllInfo(carList);
-        System.out.println(connectionService.isConnected());
+            OutputBuilder.showAllInfo(diller.findCars(car1.getModel()));
+            OutputBuilder.showAllInfo(diller.findCars(car3.getModel()));
+
+        }
     }
-
 }

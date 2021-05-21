@@ -1,32 +1,19 @@
 package com.company.diller;
 
 import com.company.car.Car;
-import com.company.car.Mark;
-import com.company.factory.BMWFactory;
-import com.company.factory.CarFactory;
-import com.company.factory.MercedesFactory;
-import com.company.factory.VolkswagenFactory;
+import com.company.service.CarServise;
 
-import java.util.Map;
-import java.util.Optional;
-
+import java.util.List;
 
 public class Diller {
-    private final Map<Mark, CarFactory> carFactoryMap;
+    private final CarServise carServise;
 
-    public Diller(BMWFactory bmwFactory, MercedesFactory mercedesFactory, VolkswagenFactory volkswagenFactory) {
-        carFactoryMap = Map.of(
-                Mark.BMW, bmwFactory,
-                Mark.MERCEDES, mercedesFactory,
-                Mark.VOLKSWAGEN, volkswagenFactory);
+
+    public Diller(CarServise carServise) {
+        this.carServise = carServise;
     }
 
-    public Optional<Car> getCar(Mark mark, String model, String color, int price, int sits) {
-        if (carFactoryMap.containsKey(mark)) {
-            return carFactoryMap.get(mark).createCar(model, color, price, sits);
-        }
-        return Optional.empty();
-
+    public List<Car> findCars(String model) {
+        return carServise.findCars(model);
     }
-
 }
