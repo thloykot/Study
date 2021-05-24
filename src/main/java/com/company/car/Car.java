@@ -7,11 +7,14 @@ public abstract class Car {
     private final String model;
     private final int price;
     private final Engine engine;
+    private final String color;
 
-    public Car(String model, int price, Engine engine) {
+    public Car(String model, int price, Engine engine, String color) {
         this.model = model;
         this.price = price;
         this.engine = engine;
+        this.color = color;
+
     }
 
     public String getModel() {
@@ -25,6 +28,8 @@ public abstract class Car {
     public Engine getEngine() {
         return engine;
     }
+
+    public String getColor(){return color;}
 
     @Override
     public String toString() {

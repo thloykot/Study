@@ -19,7 +19,7 @@ public class MercedesFactory implements CarFactory {
     @Override
     public Optional<Car> createCar(String model, String color, int price, int sits) {
         Optional<Engine> engine = engineFactory.makeEngine(Mark.MERCEDES);
-        return engine.map(value -> new Mercedes(model, price, value));
+        return engine.map(value -> new Mercedes(model, price, value,color));
     }
 
 }

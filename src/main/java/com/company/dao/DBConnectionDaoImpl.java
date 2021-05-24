@@ -13,4 +13,6 @@ public class DBConnectionDaoImpl implements DBConnectionDao {
     public boolean isConnected() {
         return dslContext.selectOne().fetchSingleInto(Boolean.TYPE);
     }
+
+
 }

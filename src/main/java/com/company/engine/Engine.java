@@ -9,4 +9,8 @@ public abstract class Engine {
         this.capasity = capasity;
     }
 
+    public int getCapasity(){
+        return capasity;
+    }
+
 }

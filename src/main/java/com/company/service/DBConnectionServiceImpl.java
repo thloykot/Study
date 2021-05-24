@@ -1,6 +1,7 @@
 package com.company.service;
 
 import com.company.dao.DBConnectionDao;
+import org.jooq.DSLContext;
 
 
 public class DBConnectionServiceImpl implements DBConnectionService {
@@ -16,5 +17,6 @@ public class DBConnectionServiceImpl implements DBConnectionService {
 
         return dbConnectionDao.isConnected();
     }
+
 
 }
