@@ -18,7 +18,7 @@ public class SingletonProvider {
     private static final BMWFactory bmwFactory = new BMWFactory(engineFactory);
     private static final VolkswagenFactory volkswagenFactory = new VolkswagenFactory(engineFactory);
     private static final MercedesFactory mercedesFactory = new MercedesFactory(engineFactory);
-    private static final Diller diller = new Diller(bmwFactory, mercedesFactory, volkswagenFactory);
+    private static final CarsProvider carsProvider = new CarsProvider(bmwFactory, mercedesFactory, volkswagenFactory);
     private static final CarSorter sorting = new CarSorter();
     private static final OutputBuilder builder = new OutputBuilder();
     private static final DataBaseHandler dataBaseHandler = new DataBaseHandler();
@@ -31,8 +31,8 @@ public class SingletonProvider {
     private SingletonProvider() {
     }
 
-    public static Diller getDiller() {
-        return diller;
+    public static CarsProvider getCarsProvider() {
+        return carsProvider;
     }
 
     public static CarSorter getCarSorter() {
@@ -51,4 +51,7 @@ public class SingletonProvider {
 
     public static EngineDao getEngineDao(){return engineDao;}
 
+    public static EngineFactory getEngineFactory() {
+        return engineFactory;
+    }
 }

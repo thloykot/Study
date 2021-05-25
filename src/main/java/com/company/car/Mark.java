@@ -1,5 +1,7 @@
 package com.company.car;
 
-public enum Mark {
+import org.jooq.Record1;
+
+public enum Mark{
     BMW, VOLKSWAGEN, MERCEDES
 }

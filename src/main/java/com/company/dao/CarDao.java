@@ -2,6 +2,7 @@ package com.company.dao;
 
 import com.company.car.Car;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CarDao {
@@ -12,5 +13,7 @@ public interface CarDao {
 
     void update(Car car, String model);
 
+    Optional<Car> get(String model);
 
+    List<Car> getAll();
 }

@@ -18,6 +18,10 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
 
+            <column name="mark" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
             <column name="model" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>

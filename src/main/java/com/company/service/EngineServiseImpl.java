@@ -4,6 +4,9 @@ import com.company.dao.EngineDao;
 import com.company.engine.Engine;
 import com.company.entity.SingletonProvider;
 
+import java.util.List;
+import java.util.Optional;
+
 public class EngineServiseImpl implements EngineServise{
     EngineDao engineDao = SingletonProvider.getEngineDao();
 
@@ -20,5 +23,15 @@ public class EngineServiseImpl implements EngineServise{
     @Override
     public void update(Engine engine, int capasity) {
         engineDao.update(engine,capasity);
+    }
+
+    @Override
+    public Optional<Engine> get(String capasity) {
+        return engineDao.get(capasity);
+    }
+
+    @Override
+    public List<Engine> getAll() {
+        return engineDao.getAll();
     }
 }

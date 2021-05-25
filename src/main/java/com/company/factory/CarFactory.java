@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface CarFactory {
 
-    Optional<Car> createCar(String model, String color, int price, int sits);
+    Optional<Car> createCar(String model, String color, int price);
 
 }

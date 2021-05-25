@@ -16,7 +16,7 @@ public class BMWFactory implements CarFactory {
     }
 
     @Override
-    public Optional<Car> createCar(String model, String color, int price, int sits) {
+    public Optional<Car> createCar(String model, String color, int price) {
         Optional<Engine> engine = engineFactory.makeEngine(Mark.BMW);
         return engine.map(value -> new BMW(model, price, value,color));
     }

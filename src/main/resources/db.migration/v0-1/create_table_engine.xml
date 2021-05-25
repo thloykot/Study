@@ -14,7 +14,12 @@
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false"/>
             </column>
-            <column name="capasity" type="varchar(50)">
+
+            <column name="mark" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="capasity" type="int">
                 <constraints nullable="false"/>
             </column>
         </createTable>
