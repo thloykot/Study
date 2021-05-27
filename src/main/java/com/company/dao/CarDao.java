@@ -15,5 +15,5 @@ public interface CarDao {
 
     Optional<Car> get(String model);
 
-    List<Car> getAll();
+    List<Optional<Car>> getAll();
 }

@@ -8,7 +8,7 @@ public class BMWEngine extends Engine {
 
     @Override
     public String toString() {
-        return "Це двигун від BMW, об'єм:" + capasity;
+        return "двигун марки BMW, об'єм:" + capasity;
     }
 
 }

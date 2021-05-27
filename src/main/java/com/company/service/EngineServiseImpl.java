@@ -8,7 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class EngineServiseImpl implements EngineServise{
-    EngineDao engineDao = SingletonProvider.getEngineDao();
+    private final EngineDao engineDao;
+
+    public EngineServiseImpl(EngineDao engineDao){
+        this.engineDao = engineDao;
+    }
 
     @Override
     public void save(Engine engine) {
@@ -26,7 +30,7 @@ public class EngineServiseImpl implements EngineServise{
     }
 
     @Override
-    public Optional<Engine> get(String capasity) {
+    public Optional<Engine> get(int capasity) {
         return engineDao.get(capasity);
     }
 

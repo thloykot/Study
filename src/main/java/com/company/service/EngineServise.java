@@ -13,7 +13,7 @@ public interface EngineServise {
 
     void update(Engine engine, int capasity);
 
-    Optional<Engine> get(String capasity);
+    Optional<Engine> get(int capasity);
 
     List<Engine> getAll();
 }

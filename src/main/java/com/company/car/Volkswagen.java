@@ -4,8 +4,8 @@ import com.company.engine.Engine;
 
 public final class Volkswagen extends Car {
 
-    public Volkswagen(String model, int price, Engine engine, String color) {
-        super(model, price, engine, color);
+    public Volkswagen(Mark mark,String model, int price, String color) {
+        super(mark,model, price, color);
     }
 
 }

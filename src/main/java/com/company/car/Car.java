@@ -1,18 +1,18 @@
 package com.company.car;
 
-
 import com.company.engine.Engine;
 
 public abstract class Car {
+
     private final String model;
     private final int price;
-    private final Engine engine;
     private final String color;
+    private final Mark mark;
 
-    public Car(String model, int price, Engine engine, String color) {
+    public Car(Mark mark, String model, int price, String color) {
+        this.mark = mark;
         this.model = model;
         this.price = price;
-        this.engine = engine;
         this.color = color;
 
     }
@@ -25,15 +25,18 @@ public abstract class Car {
         return price;
     }
 
-    public Engine getEngine() {
-        return engine;
+    public String getColor() {
+        return color;
     }
 
-    public String getColor(){return color;}
+    public Mark getMark() {
+        return mark;
+    }
 
     @Override
     public String toString() {
-        return model + ", " + price + ", " + engine;
+        return "Марка:" + mark.toString() + ", модель:" + model + ", ціна:" + price + ", Двигун";
     }
+
 
 }

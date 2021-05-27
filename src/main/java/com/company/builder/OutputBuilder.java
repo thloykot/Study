@@ -11,5 +11,8 @@ public class OutputBuilder {
             System.out.println(i);
         }
     }
+    public void showAllInfo(Car car){
+        System.out.println(car);
+    }
 
 }

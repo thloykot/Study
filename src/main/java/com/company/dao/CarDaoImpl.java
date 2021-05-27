@@ -1,17 +1,18 @@
 package com.company.dao;
 
+
 import com.company.car.Car;
+import com.company.car.CarBuilder;
 import com.company.entity.CarsProvider;
 import com.company.entity.SingletonProvider;
 import org.jooq.DSLContext;
-import org.jooq.Record5;
-import org.jooq.Result;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.jooq.generatedDB.tables.Car.CAR;
+import static org.jooq.generatedDB.tables.Engine.ENGINE;
 
 public class CarDaoImpl implements CarDao {
     private final CarsProvider carsProvider = SingletonProvider.getCarsProvider();
@@ -25,12 +26,12 @@ public class CarDaoImpl implements CarDao {
     @Override
     public void save(Car car) {
         dslContext.insertInto(CAR, CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
-                .values(carsProvider.getMark(car).toString(), car.getModel(), car.getPrice(), car.getColor()).execute();
+                .values(String.valueOf(car.getMark()), car.getModel(), car.getPrice(), car.getColor()).execute();
     }
 
     @Override
     public void delete(String model) {
-        dslContext.deleteFrom(CAR).where(CAR.MODEL.eq(model)).execute();
+        dslContext.deleteFrom(CAR).where(CAR.MODEL.eq(model)).orderBy(CAR.ID.desc()).execute();
     }
 
     @Override
@@ -42,19 +43,18 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Optional<Car> get(String model) {
-        Record5<Integer, String, String, Integer, String> objectMap = dslContext.select(CAR.ID, CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
-                .from(CAR).where(CAR.MODEL.eq(model)).fetchSingle();
-        return carsProvider.getCar(carsProvider.getMark(objectMap.value2()), objectMap.value3(), objectMap.component5(), objectMap.value4());
+        return dslContext.select(CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
+                .from(CAR.join(ENGINE).on(CAR.ID.eq(ENGINE.ID))).where(CAR.MODEL.eq(model))
+                .fetchAny().into(CarBuilder.class).createCar();
     }
 
     @Override
-    public List<Car> getAll() {
-        List<Car> carList = new ArrayList<>();
-        Result<Record5<Integer, String, String, Integer, String>> getedCars = dslContext.select(CAR.ID, CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR).from(CAR).fetch();
-        for (var car : getedCars) {
-            Optional<Car> Car = carsProvider.getCar(carsProvider.getMark(car.value2()), car.value3(), car.component5(), car.value4());
-            Car.ifPresent(carList::add);
-        }
-        return carList;
+    public List<Optional<Car>> getAll() {
+
+        List<CarBuilder> cars = dslContext.select(CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
+                .from(CAR.join(ENGINE).on(CAR.ID.eq(ENGINE.ID)))
+                .fetch().into(CarBuilder.class);
+
+        return  cars.stream().map(CarBuilder::createCar).collect(Collectors.toList());
     }
 }

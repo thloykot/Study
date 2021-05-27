@@ -14,6 +14,5 @@ public interface CarServise {
 
     Optional<Car> get(String model);
 
-    List<Car> getAll();
-
+    List<Optional<Car>> getAll();
 }

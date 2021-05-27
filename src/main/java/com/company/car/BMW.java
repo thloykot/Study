@@ -4,8 +4,8 @@ import com.company.engine.Engine;
 
 public final class BMW extends Car {
 
-    public BMW(String model, int price, Engine engine,String color) {
-        super(model, price, engine, color);
+    public BMW(Mark mark,String model, int price,String color) {
+        super(mark,model, price, color);
     }
 
 }

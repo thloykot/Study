@@ -2,7 +2,6 @@ package com.company.service;
 
 import com.company.car.Car;
 import com.company.dao.CarDao;
-import com.company.entity.SingletonProvider;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +9,11 @@ import java.util.Optional;
 
 public class CarServiseImpl implements CarServise {
 
-    private final CarDao carDao = SingletonProvider.getCarDao();
+    private final CarDao carDao;
+
+    public CarServiseImpl(CarDao carDao){
+        this.carDao = carDao;
+    }
 
     @Override
     public void save(Car car) {
@@ -33,7 +36,8 @@ public class CarServiseImpl implements CarServise {
     }
 
     @Override
-    public List<Car> getAll() {
+    public List<Optional<Car>> getAll() {
         return carDao.getAll();
     }
+
 }

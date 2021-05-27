@@ -1,19 +1,16 @@
 package com.company;
 
+import com.company.builder.OutputBuilder;
 import com.company.car.Car;
 import com.company.car.Mark;
-import com.company.builder.OutputBuilder;
-import com.company.carDB.DataBaseHandler;
-import com.company.dao.EngineDaoImpl;
 import com.company.entity.CarsProvider;
 import com.company.entity.SingletonProvider;
-import com.company.service.CarServise;
-import com.company.service.CarServiseImpl;
-import com.company.service.DBConnectionService;
+import com.company.service.*;
 import com.company.sorting.CarSorter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
 
@@ -23,6 +20,8 @@ public class Main {
         OutputBuilder outputBuilder = SingletonProvider.getOutputBuilder();
         CarsProvider carsProvider = SingletonProvider.getCarsProvider();
         DBConnectionService connectionService = SingletonProvider.getConnectionService();
+        CarServise carServise = SingletonProvider.getCarServise();
+        EngineServise engineServise = SingletonProvider.getEngineServise();
 
 
         ArrayList<Car> carArrayList = new ArrayList<>();
@@ -37,11 +36,10 @@ public class Main {
         List<Car> carList = sorting.sort(carArrayList);
         outputBuilder.showAllInfo(carList);
         System.out.println(connectionService.isConnected());
-        CarServise carServise = new CarServiseImpl();
-        DataBaseHandler dataBaseHandler = new DataBaseHandler();
-        EngineDaoImpl engineDao = new EngineDaoImpl(dataBaseHandler.getDbDSLContext());
-        carServise.delete("ad");
-        carServise.delete("aaf");
+        //Optional<Car> car = carServise.get("dda");
+        //car.ifPresent(outputBuilder::showAllInfo);
+        //System.out.println(carServise.getAll());
+        System.out.println(engineServise.get(12));
     }
 
 }
