@@ -1,3 +1,7 @@
 *.iml
 *class
-*.xml
+.xml
+target
+.idea/
+.gradle
+

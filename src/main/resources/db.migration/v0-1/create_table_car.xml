@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <preConditions>
+        <tableExists tableName="car"/>
+    </preConditions>
+
+    <changeSet id="1" author="Thlkt">
+        <createTable tableName="car">
+            <column name="ID" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="model" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="color" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
