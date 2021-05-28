@@ -8,7 +8,7 @@ public class VolkswagenEngine extends Engine {
 
     @Override
     public String toString() {
-        return "двигун марки Volkswagen, об'єм:" + capasity;
+        return "Двигун марки Volkswagen, об'єм:" + capasity;
     }
 
 }

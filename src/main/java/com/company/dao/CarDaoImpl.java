@@ -43,7 +43,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Optional<Car> get(String model) {
-        return dslContext.select(CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
+        return dslContext.select(CAR.ID,CAR.MARK, CAR.MODEL, CAR.PRICE, CAR.COLOR)
                 .from(CAR.join(ENGINE).on(CAR.ID.eq(ENGINE.ID))).where(CAR.MODEL.eq(model))
                 .fetchAny().into(CarBuilder.class).createCar();
     }

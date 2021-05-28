@@ -3,6 +3,7 @@ package com.company;
 import com.company.builder.OutputBuilder;
 import com.company.car.Car;
 import com.company.car.Mark;
+import com.company.diller.Diller;
 import com.company.entity.CarsProvider;
 import com.company.entity.SingletonProvider;
 import com.company.service.*;
@@ -22,6 +23,7 @@ public class Main {
         DBConnectionService connectionService = SingletonProvider.getConnectionService();
         CarServise carServise = SingletonProvider.getCarServise();
         EngineServise engineServise = SingletonProvider.getEngineServise();
+        Diller diller = SingletonProvider.getDiller();
 
 
         ArrayList<Car> carArrayList = new ArrayList<>();
@@ -39,7 +41,9 @@ public class Main {
         //Optional<Car> car = carServise.get("dda");
         //car.ifPresent(outputBuilder::showAllInfo);
         //System.out.println(carServise.getAll());
-        System.out.println(engineServise.get(12));
+        //System.out.println(engineServise.get(12));
+        diller.get("dda");
+
     }
 
 }

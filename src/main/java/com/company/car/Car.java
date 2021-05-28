@@ -35,7 +35,7 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return "Марка:" + mark.toString() + ", модель:" + model + ", ціна:" + price + ", Двигун";
+        return "Марка:" + mark.toString() + ". Модель:" + model + ", Ціна:" + price + ", ";
     }
 
 

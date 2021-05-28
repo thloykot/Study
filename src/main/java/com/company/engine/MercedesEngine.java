@@ -8,7 +8,7 @@ public class MercedesEngine extends Engine {
 
     @Override
     public String toString() {
-        return "двигун марки Mersedes, об'єм:" + capasity;
+        return "Двигун марки Mersedes, об'єм:" + capasity;
     }
 
 }

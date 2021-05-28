@@ -29,9 +29,12 @@ public class SingletonProvider {
     private static final EngineDao engineDao = new EngineDaoImpl(dlsContext);
     private static final CarServise carServise = new CarServiseImpl(carDao);
     private static final EngineServise engineServise = new EngineServiseImpl(engineDao);
+    private static final Diller diller = new Diller(dlsContext);
 
     private SingletonProvider() {
     }
+
+    public static Diller getDiller(){return  diller;}
 
     public static CarsProvider getCarsProvider() {
         return carsProvider;
