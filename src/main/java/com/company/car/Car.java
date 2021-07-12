@@ -1,25 +1,19 @@
 package com.company.car;
 
-
 import com.company.engine.Engine;
 
-public abstract class Car {
-    private final String model;
-    private final int price;
+public abstract class Car extends CarMetadata {
+
     private final Engine engine;
 
-    public Car(String model, int price, Engine engine) {
-        this.model = model;
-        this.price = price;
+    public Car(Mark mark, String model, int price, String color, Engine engine) {
+        super(mark, model, price, color);
         this.engine = engine;
     }
 
-    public String getModel() {
-        return model;
-    }
 
-    public int getPrice() {
-        return price;
+    public Mark getMark() {
+        return mark;
     }
 
     public Engine getEngine() {
@@ -28,7 +22,8 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return model + ", " + price + ", " + engine;
+        return "Машина марки:" + getMark() + ". Модель:" + model + ". Ціна:" + price + ". Колір:" + color + ".\n" + engine;
     }
+
 
 }

@@ -11,6 +11,9 @@ public class DBConnectionDaoImpl implements DBConnectionDao {
 
     @Override
     public boolean isConnected() {
-        return dslContext.selectOne().fetchSingleInto(Boolean.TYPE);
+        return dslContext.selectOne().
+                fetchSingleInto(boolean.class);
     }
+
+
 }
