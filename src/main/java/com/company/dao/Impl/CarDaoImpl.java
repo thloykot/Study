@@ -1,10 +1,11 @@
-package com.company.dao;
+package com.company.dao.Impl;
 
 
 import com.company.car.Car;
 import com.company.car.CarEntity;
 import com.company.car.CarMetadata;
 import com.company.car.Mark;
+import com.company.dao.CarDao;
 import org.jooq.DSLContext;
 
 import java.util.List;

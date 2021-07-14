@@ -1,9 +1,10 @@
-package com.company.factory;
+package com.company.factory.CarFactoryImpl;
 
 import com.company.car.BMW;
 import com.company.car.Car;
 import com.company.car.CarEntity;
 import com.company.engine.Engine;
+import com.company.factory.CarFactory;
 
 
 public class BMWFactory implements CarFactory {

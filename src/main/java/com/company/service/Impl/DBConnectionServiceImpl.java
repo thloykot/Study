@@ -1,6 +1,7 @@
-package com.company.service;
+package com.company.service.Impl;
 
 import com.company.dao.DBConnectionDao;
+import com.company.service.DBConnectionService;
 
 
 public class DBConnectionServiceImpl implements DBConnectionService {

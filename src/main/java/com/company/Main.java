@@ -1,6 +1,5 @@
 package com.company;
 
-import com.company.builder.OutputBuilder;
 import com.company.car.BMW;
 import com.company.car.Car;
 import com.company.car.Mercedes;
@@ -32,9 +31,8 @@ public class Main {
             carServise.update(car1, car2Id);
             carServise.save(car3);
 
-            OutputBuilder.showAllInfo(diller.findCars(car1.getModel()));
-            OutputBuilder.showAllInfo(diller.findCars(car3.getModel()));
-
+            diller.findCars(car1.getModel());
+            diller.findCars(car3.getModel());
         }
     }
 }

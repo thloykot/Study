@@ -1,5 +1,6 @@
 package com.company.diller;
 
+import com.company.builder.OutputBuilder;
 import com.company.car.Car;
 import com.company.service.CarServise;
 
@@ -13,7 +14,7 @@ public class Diller {
         this.carServise = carServise;
     }
 
-    public List<Car> findCars(String model) {
-        return carServise.findCars(model);
+    public void findCars(String model) {
+        OutputBuilder.showAllInfo(carServise.findCars(model));
     }
 }

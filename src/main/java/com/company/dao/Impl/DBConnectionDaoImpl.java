@@ -1,5 +1,6 @@
-package com.company.dao;
+package com.company.dao.Impl;
 
+import com.company.dao.DBConnectionDao;
 import org.jooq.DSLContext;
 
 public class DBConnectionDaoImpl implements DBConnectionDao {

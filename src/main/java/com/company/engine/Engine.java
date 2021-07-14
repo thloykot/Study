@@ -20,4 +20,18 @@ public abstract class Engine {
     public String toString() {
         return "Двигун Марки:" + getMark() + ". Об'єм:" + capasity;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (o instanceof Engine) {
+            Engine engine = (Engine) o;
+
+            return capasity == engine.capasity;
+        }
+        return false;
+    }
 }

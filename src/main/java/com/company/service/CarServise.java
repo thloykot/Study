@@ -15,5 +15,4 @@ public interface CarServise {
     int update(CarMetadata carMetadata, int oldCarId);
 
     List<Car> findCars(String model);
-
 }

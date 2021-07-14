@@ -1,7 +1,8 @@
-package com.company.factory;
+package com.company.factory.EngineFactoryImpl;
 
 import com.company.engine.BMWEngine;
 import com.company.engine.Engine;
+import com.company.factory.EngineFactory;
 
 public class BMWEngineFactory implements EngineFactory {
     @Override

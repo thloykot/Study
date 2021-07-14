@@ -1,12 +1,13 @@
-package com.company.service;
+package com.company.service.Impl;
 
 import com.company.car.Mark;
 import com.company.dao.EngineDao;
 import com.company.engine.Engine;
-import com.company.factory.BMWEngineFactory;
+import com.company.factory.EngineFactoryImpl.BMWEngineFactory;
 import com.company.factory.EngineFactory;
-import com.company.factory.MercedesEngineFactory;
-import com.company.factory.VolkswagenEngineFactory;
+import com.company.factory.EngineFactoryImpl.MercedesEngineFactory;
+import com.company.factory.EngineFactoryImpl.VolkswagenEngineFactory;
+import com.company.service.EngineServise;
 
 import java.util.Map;
 import java.util.Optional;
@@ -46,7 +47,8 @@ public class EngineServiseImpl implements EngineServise {
 
     @Override
     public Optional<Engine> findEngine(int id) {
-        return engineDao.findEngine(id).map(dbEngine -> engineFactoryMap
+        return engineDao.findEngine(id)
+                .map(dbEngine -> engineFactoryMap
                 .get(dbEngine.getMark()).createEngine(dbEngine.getCapasity()));
     }
 

@@ -1,10 +1,11 @@
-package com.company.factory;
+package com.company.factory.CarFactoryImpl;
 
 
 import com.company.car.Car;
 import com.company.car.CarEntity;
 import com.company.car.Mercedes;
 import com.company.engine.Engine;
+import com.company.factory.CarFactory;
 
 
 public class MercedesFactory implements CarFactory {
