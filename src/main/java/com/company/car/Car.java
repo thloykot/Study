@@ -25,5 +25,18 @@ public abstract class Car extends CarMetadata {
         return "Машина марки:" + getMark() + ". Модель:" + model + ". Ціна:" + price + ". Колір:" + color + ".\n" + engine;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
 
+        if (o instanceof Car) {
+            Car car = (Car) o;
+
+            return mark == car.mark && model.equals(car.model)
+                    && color.equals(car.color) && price == car.price && engine.equals(car.engine);
+        }
+        return false;
+    }
 }

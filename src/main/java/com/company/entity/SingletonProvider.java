@@ -2,8 +2,14 @@ package com.company.entity;
 
 import com.company.carDB.DataBaseHandler;
 import com.company.dao.*;
+import com.company.dao.Impl.CarDaoImpl;
+import com.company.dao.Impl.DBConnectionDaoImpl;
+import com.company.dao.Impl.EngineDaoImpl;
 import com.company.diller.Diller;
 import com.company.service.*;
+import com.company.service.Impl.CarServiseImpl;
+import com.company.service.Impl.DBConnectionServiceImpl;
+import com.company.service.Impl.EngineServiseImpl;
 import org.jooq.DSLContext;
 
 public class SingletonProvider {

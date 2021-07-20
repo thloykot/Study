@@ -1,5 +1,6 @@
-package com.company.dao;
+package com.company.dao.Impl;
 
+import com.company.dao.EngineDao;
 import com.company.engine.Engine;
 import com.company.engine.EngineEntity;
 import org.jooq.DSLContext;

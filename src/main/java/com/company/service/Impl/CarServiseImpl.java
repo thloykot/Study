@@ -1,4 +1,4 @@
-package com.company.service;
+package com.company.service.Impl;
 
 import com.company.car.Car;
 import com.company.car.CarEntity;
@@ -6,10 +6,12 @@ import com.company.car.CarMetadata;
 import com.company.car.Mark;
 import com.company.dao.CarDao;
 import com.company.engine.Engine;
-import com.company.factory.BMWFactory;
 import com.company.factory.CarFactory;
-import com.company.factory.MercedesFactory;
-import com.company.factory.VolkswagenFactory;
+import com.company.factory.CarFactoryImpl.BMWFactory;
+import com.company.factory.CarFactoryImpl.MercedesFactory;
+import com.company.factory.CarFactoryImpl.VolkswagenFactory;
+import com.company.service.CarServise;
+import com.company.service.EngineServise;
 
 import java.util.List;
 import java.util.Map;
@@ -62,10 +64,11 @@ public class CarServiseImpl implements CarServise {
 
     @Override
     public List<Car> findCars(String model) {
-        return carDao.findCars(model).stream().map(carEntity -> findEngine(carEntity.getEngineId())
+        return carDao.findCars(model).stream()
+                .map(carEntity -> findEngine(carEntity.getEngineId())
                 .map(engine -> getCarFromFactory(carEntity, engine)))
-                .filter(Optional::isPresent)
-                .map(Optional::get).collect(Collectors.toUnmodifiableList());
+                .flatMap(Optional::stream)
+                .collect(Collectors.toUnmodifiableList());
     }
 
     private int findOrSaveEngine(Engine engine) {
