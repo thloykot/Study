@@ -1,0 +1,57 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="1" author="Thlkt">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="car"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="engine">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="mark" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="capasity" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="car">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="mark" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="model" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="color" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="engine_id" type="int">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="car" baseColumnNames="engine_id"
+                                 constraintName="fk_engine_id"
+                                 referencedTableName="engine" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
