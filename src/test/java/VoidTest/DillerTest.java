@@ -22,10 +22,10 @@ import static org.mockito.Mockito.when;
 public class DillerTest {
 
     @InjectMocks
-    Diller diller;
+    private Diller diller;
 
     @Mock
-    CarServise carServise;
+    private CarServise carServise;
 
 
     @Test
@@ -38,7 +38,7 @@ public class DillerTest {
             when(carServise.findCars(model)).thenReturn(cars);
 
             diller.findCars(model);
-            
+
             outputBuilder.verify(() -> OutputBuilder.showAllInfo(cars));
         }
     }
