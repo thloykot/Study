@@ -43,4 +43,17 @@ public class CarEntity {
         return engineId;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o instanceof CarEntity) {
+            CarEntity carEntity = (CarEntity) o;
+            return id == carEntity.id && mark == carEntity.mark && model.equals(carEntity.model)
+                    && color.equals(carEntity.color) && price == carEntity.price && engineId == carEntity.engineId;
+        }
+        return false;
+    }
 }

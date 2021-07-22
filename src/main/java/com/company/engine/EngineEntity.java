@@ -24,4 +24,18 @@ public class EngineEntity {
     public int getId() {
         return id;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof EngineEntity) {
+
+            EngineEntity that = (EngineEntity) o;
+
+            return capasity == that.capasity && mark == that.mark;
+        }
+        return false;
+    }
 }

@@ -13,6 +13,7 @@ public class TestDataBaseHandler {
     public static DSLContext getDbDSLContext() {
         if (PASS != null) {
             return DSL.using(CONNECTION_STR, USER, PASS);
+
         }
         throw new RuntimeException("Пароль відсутній");
     }
