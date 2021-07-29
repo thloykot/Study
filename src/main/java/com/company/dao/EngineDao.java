@@ -16,8 +16,6 @@ public interface EngineDao {
 
     Optional<EngineEntity> findEngine(int id);
 
-    List<EngineEntity> getAll();
-
     Optional<Integer> findEngineId(Engine engine);
 
     boolean isExist(Engine engine);

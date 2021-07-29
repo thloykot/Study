@@ -16,9 +16,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.util.List;
-
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.core.Is.is;
 import static org.jooq.generatedDB.tables.Car.CAR;
 import static org.jooq.generatedDB.tables.Engine.ENGINE;
@@ -27,8 +26,6 @@ import static org.jooq.generatedDB.tables.Engine.ENGINE;
 public class CarDaoTest {
     private static final DSLContext dslContext = TestDataBaseHandler.getDbDSLContext();
     private final CarDao carDao = new CarDaoImpl(TestDataBaseHandler.getDbDSLContext());
-    private final int engineId1 = createEngineForCar(EngineGenerator.getEngine());
-    private final int engineId2 = createEngineForCar(EngineGenerator.getEngine());
 
 
     @BeforeClass
@@ -41,6 +38,7 @@ public class CarDaoTest {
     @Test
     public void testSave() {
         Car testCar = CarGenerator.getCar(EngineGenerator.getEngine());
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
 
         carDao.save(testCar, engineId1);
 
@@ -50,6 +48,7 @@ public class CarDaoTest {
     @Test
     public void testCarExist() {
         Car testCar = CarGenerator.getCar(EngineGenerator.getEngine());
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
 
         carDao.save(testCar, engineId1);
 
@@ -60,11 +59,12 @@ public class CarDaoTest {
     @Test
     public void testFindCars() {
         Car testedCar = CarGenerator.getCar(EngineGenerator.getEngine());
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
         int id = carDao.save(testedCar, engineId1);
         CarEntity testedEntity = new CarEntity(id, testedCar.getMark(), testedCar.getModel(),
                 testedCar.getPrice(), testedCar.getColor(), engineId1);
 
-        assertThat(carDao.findCars(testedCar.getModel()), is(List.of(testedEntity)));
+        assertThat(carDao.findCars(testedCar.getModel()), containsInAnyOrder(testedEntity));
     }
 
     @Test
@@ -72,6 +72,8 @@ public class CarDaoTest {
 
         Car testCarOld = CarGenerator.getCar(EngineGenerator.getEngine());
         Car testCarNew = CarGenerator.getCar(EngineGenerator.getEngine());
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
+        int engineId2 = saveEngineForCar(EngineGenerator.getEngine());
         int oldCarId = carDao.save(testCarOld, engineId1);
 
         carDao.update(testCarNew, oldCarId, engineId2);
@@ -84,6 +86,7 @@ public class CarDaoTest {
     public void testUpdateMeta() {
         Car testCar = CarGenerator.getCar(EngineGenerator.getEngine());
         CarMetadata carMetadata = CarMetaDataGenerator.getCarMetadata();
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
         int oldCarId = carDao.save(testCar, engineId1);
 
         carDao.update(carMetadata, oldCarId);
@@ -95,7 +98,7 @@ public class CarDaoTest {
     @Test
     public void testDelete() {
         Car testCar = CarGenerator.getCar(EngineGenerator.getEngine());
-
+        int engineId1 = saveEngineForCar(EngineGenerator.getEngine());
         int carId = carDao.save(testCar, engineId1);
 
         carDao.delete(carId);
@@ -123,7 +126,7 @@ public class CarDaoTest {
                 CAR.PRICE.eq(car.getPrice()));
     }
 
-    private int createEngineForCar(Engine engine) {
+    private int saveEngineForCar(Engine engine) {
         return dslContext.insertInto(ENGINE, ENGINE.MARK, ENGINE.CAPASITY)
                 .values(engine.getMark().name(), engine.getCapasity()).
                         returningResult(ENGINE.ID).fetchOne().into(int.class);

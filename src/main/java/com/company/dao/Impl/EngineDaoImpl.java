@@ -45,12 +45,6 @@ public class EngineDaoImpl implements EngineDao {
     }
 
     @Override
-    public List<EngineEntity> getAll() {
-        return dslContext.select(ENGINE.MARK, ENGINE.CAPASITY, ENGINE.ID)
-                .from(ENGINE).fetchInto(EngineEntity.class);
-    }
-
-    @Override
     public Optional<Integer> findEngineId(Engine engine) {
         return dslContext.select(ENGINE.ID).from(ENGINE).where(ENGINE.MARK.eq(engine.getMark().name()).and(ENGINE.CAPASITY.eq(engine.getCapasity())))
                 .fetchOptionalInto(int.class);
